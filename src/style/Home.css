@@ -1,0 +1,165 @@
+/* ===============================
+   CONTENEDOR PRINCIPAL
+================================ */
+.home-screen {
+  position: fixed;
+  top: 0;
+  left: 250px;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ===============================
+   FONDO (más limpio)
+================================ */
+.hero-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/Fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.3);
+  z-index: -1;
+}
+
+/* ===============================
+   CONTENIDO
+================================ */
+.home-content {
+  height: 100%;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  /* overlay elegante */
+  background: linear-gradient(
+    120deg,
+    rgba(15, 23, 42, 0.75) 0%,
+    rgba(15, 23, 42, 0.3) 60%,
+    transparent 100%
+  );
+}
+
+/* ===============================
+   TAG SUPERIOR
+================================ */
+.portal-tag {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 10px;
+}
+
+/* ===============================
+   DÍA GRANDE (protagonista)
+================================ */
+.day-name {
+  font-size: 8rem;
+  font-weight: 900;
+  margin: 0;
+  line-height: 0.85;
+  letter-spacing: -4px;
+  text-transform: uppercase;
+  color: white;
+}
+
+/* ===============================
+   FECHA
+================================ */
+.date-text {
+  font-size: 0.95rem;
+  color: #cbd5f5;
+  margin-top: 8px;
+}
+
+/* ===============================
+   BIENVENIDA
+================================ */
+.motivation-quote {
+  font-size: 1.2rem;
+  max-width: 520px;
+  border-left: 3px solid #38bdf8;
+  padding-left: 18px;
+  margin-top: 30px;
+  color: #e2e8f0;
+}
+
+.motivation-quote p:first-child {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* ===============================
+   WIDGETS (ADMIN / VENDEDOR)
+================================ */
+.admin-widgets,
+.seller-widgets {
+  margin-top: 30px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* tarjetas pequeñas */
+.admin-widgets p,
+.seller-widgets p {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  color: #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+/* hover suave */
+.admin-widgets p:hover,
+.seller-widgets p:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   FOOTER STATUS (opcional si usas)
+================================ */
+.footer-status {
+  display: flex;
+  gap: 12px;
+}
+
+.status-pill {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ===============================
+   ANIMACIÓN SUAVE
+================================ */
+.fade-in {
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

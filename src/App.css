@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Contenedor general */
+.app-layout {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+/* Cuando hay sesión (con sidebar) */
+.main-content {
+  margin-left: 270px; /* mismo ancho que .sidebar */
+  padding: 30px;
+  min-height: 100vh;
+  transition: margin 0.3s ease;
+}
+
+/* Cuando NO hay sesión (login) */
+.full-content {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+}
+
+/* Animación suave */
+.page-container {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

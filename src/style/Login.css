@@ -1,0 +1,120 @@
+/* ===== Fondo general ===== */
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ===== Contenedor principal ===== */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    #f1f5f9 0%,
+    #e2e8f0 100%
+  );
+  padding: 1rem;
+}
+
+/* ===== Card del login ===== */
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem 2.25rem;
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.05),
+    0 4px 10px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e5e7eb;
+}
+
+/* ===== Header ===== */
+.login-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.login-subtitle {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+/* ===== Labels ===== */
+.login-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #334155;
+  margin-bottom: 0.35rem;
+}
+
+/* ===== Inputs ===== */
+.login-input {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #cbd5f5;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.9rem;
+  color: #0f172a;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.login-input::placeholder {
+  color: #94a3b8;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: #0f172a;
+  box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.15);
+}
+
+.login-input:disabled {
+  background-color: #f1f5f9;
+  cursor: not-allowed;
+}
+
+/* ===== Botón ===== */
+.login-button {
+  width: 100%;
+  border-radius: 12px;
+  background-color: #0f172a;
+  padding: 0.7rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.login-button:hover {
+  background-color: #020617;
+}
+
+.login-button:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* ===== Error ===== */
+.login-error {
+  border-radius: 10px;
+  border: 1px solid #fecaca;
+  background-color: #fef2f2;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  color: #b91c1c;
+}
+
+/* ===== Footer ===== */
+.login-footer {
+  margin-top: 1.75rem;
+  text-align: center;
+  font-size: 0.7rem;
+  color: #94a3b8;
+}

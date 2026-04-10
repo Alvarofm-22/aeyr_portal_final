@@ -1,0 +1,224 @@
+/* ===============================
+   CONTENEDOR GENERAL
+================================ */
+.cotizacion-wrapper {
+  padding: 40px;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+/* ===============================
+   TARJETA EDITOR
+================================ */
+.card-editor {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  max-width: 920px;
+  margin: auto;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+/* ===============================
+   HEADER
+================================ */
+.editor-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.input-proyecto,
+.select-distrito {
+  padding: 12px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #0f172a;
+  background: #ffffff;
+}
+
+.input-proyecto::placeholder {
+  color: #94a3b8;
+}
+
+/* ===============================
+   TABLA EDITOR
+================================ */
+.tabla-editor {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-editor th {
+  background: #1e3a8a;
+  color: #ffffff;
+  padding: 12px;
+  font-size: 0.75rem;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.tabla-editor td {
+  padding: 12px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: center;
+  color: #0f172a;
+}
+
+.tabla-editor input {
+  width: 80px;
+  padding: 8px;
+  border: 1px solid #cbd5f5;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.p-unit-label {
+  font-family: monospace;
+  color: #1e40af;
+  font-weight: 700;
+}
+
+/* ===============================
+   BOTONES
+================================ */
+.btn-add-full {
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-add-full:hover {
+  background: #1d4ed8;
+}
+
+.btn-toggle-boleta {
+  width: 100%;
+  margin-top: 12px;
+  padding: 14px;
+  background: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-toggle-boleta:hover {
+  background: #15803d;
+}
+
+/* ===============================
+   BOLETA PREVIEW
+================================ */
+.boleta-preview {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hoja A4 */
+.a4-sheet {
+  width: 210mm;
+  background: #ffffff;
+  padding: 26mm;
+  box-shadow: 0 0 35px rgba(15, 23, 42, 0.15);
+  border-top: 12px solid #1e3a8a;
+}
+
+/* ===============================
+   HEADER BOLETA
+================================ */
+.boleta-header-oficial {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #1e293b;
+}
+
+.boleta-header-oficial h2,
+.boleta-header-oficial p {
+  color: #0f172a;
+}
+
+.cot-nro {
+  text-align: right;
+}
+
+.cot-nro h1 {
+  margin: 0;
+  font-size: 36px;
+  color: #1e3a8a;
+}
+
+/* ===============================
+   TABLA BOLETA FINAL
+================================ */
+.tabla-boleta-final {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.tabla-boleta-final th {
+  padding: 10px;
+  background: #f1f5f9;
+  border-bottom: 2px solid #1e3a8a;
+  color: #1e293b;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.tabla-boleta-final td {
+  padding: 12px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #0f172a;
+}
+
+/* ===============================
+   FOOTER BOLETA
+================================ */
+.boleta-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 45px;
+  padding-top: 20px;
+  border-top: 2px solid #e5e7eb;
+}
+
+.total-gold {
+  font-size: 30px;
+  font-weight: 800;
+  color: #d4a017;
+  margin: 5px 0;
+}
+
+/* ===============================
+   BOTÓN PDF
+================================ */
+.btn-descargar-pdf {
+  margin-top: 22px;
+  padding: 18px 50px;
+  background: linear-gradient(135deg, #d4a017, #b88a12);
+  color: white;
+  border-radius: 999px;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-descargar-pdf:hover {
+  filter: brightness(1.05);
+}
+

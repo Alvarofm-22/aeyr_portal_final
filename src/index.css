@@ -1,0 +1,18 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  width: 100%; /* Asegura que el root ocupe todo */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 100%; /* Cambiado de 320px a 100% */
+  min-height: 100vh;
+  display: block; /* Eliminamos el flex que centraba todo */
+  background-color: #f4f7f6;
+}
+
+/* Reseteo para que nada se salga de los bordes */
+* {
+  box-sizing: border-box;
+}

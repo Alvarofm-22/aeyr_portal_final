@@ -1,0 +1,66 @@
+.buscar-container {
+  max-width: 420px;
+  margin: 60px auto;
+  padding: 30px 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  text-align: center;
+  font-family: "Inter", sans-serif;
+}
+
+.buscar-container h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* INPUT */
+.buscar-container input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.buscar-container input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* BOTÓN */
+.buscar-container button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px;
+  background: #2563eb;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.buscar-container button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.buscar-container button:active {
+  transform: scale(0.98);
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .buscar-container {
+    margin: 30px 15px;
+    padding: 25px 20px;
+  }
+}
