@@ -92,7 +92,7 @@ const BoletaPDF = ({ data }) => {
         html2pdf()
         .set({
             margin: 8,
-            filename: `cotizacion_${data.id}.pdf`,
+            filename: `cotizacion_${data.numeroCotizacion}.pdf`,
             html2canvas: {
             scale: 2,
             useCORS: true,
@@ -137,7 +137,7 @@ const BoletaPDF = ({ data }) => {
 
             <div className="cot-box">
               <span className="cot-label">COTIZACIÓN</span>
-              <h1>#{data.id}</h1>
+              <h1>{data.numeroCotizacion}</h1>
               <span className="cot-sub">Sistema interno</span>
             </div>
           </div>

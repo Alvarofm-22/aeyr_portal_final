@@ -1,0 +1,243 @@
+/* 🌐 CONTENEDOR */
+.usuarios-container {
+  padding: 25px;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: #f5f7fb;
+  min-height: 100vh;
+}
+
+/* 🧠 HEADER */
+.usuarios-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.usuarios-header h1 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* 🔘 BOTONES */
+.btn {
+  padding: 9px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: #6366f1;
+  color: white;
+  margin-left: 100px;
+}
+
+.btn-primary:hover {
+  background: #4f46e5;
+  transform: translateY(-1px);
+}
+
+.btn-warning {
+  background: #f59e0b;
+  color: white;
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: white;
+}
+
+/* 🔍 BUSCADOR */
+.usuarios-search {
+  margin-bottom: 25px;
+}
+
+.usuarios-search input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  font-size: 14px;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+.usuarios-search input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* 📦 GRID */
+.usuarios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 18px;
+}
+
+/* 🧾 CARD */
+.usuario-card {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 16px;
+  border: 1px solid #f1f5f9;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.usuario-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+/* HEADER CARD */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.doc {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+/* USERNAME */
+.usuario-card h3 {
+  margin: 8px 0;
+  color: #111827;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* INFO */
+.info {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 4px 0;
+}
+
+/* 🟢 ESTADO CHIP */
+.estado {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.estado.activo {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.estado.inactivo {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* 🪟 MODAL */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.45);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* CONTENIDO */
+.modal-content {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 420px;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  animation: scaleIn 0.2s ease;
+}
+
+.modal-content h3 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.modal-content p {
+  margin: 6px 0;
+  color: #374151;
+}
+
+/* BOTONES MODAL */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* 🔄 ESTADOS */
+.center {
+  text-align: center;
+  margin-top: 40px;
+  color: #6b7280;
+}
+
+.error {
+  text-align: center;
+  color: #ef4444;
+  margin-top: 40px;
+}
+
+/* ✨ ANIMACIÓN */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 600px) {
+  .usuarios-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+.usuarios-search {
+  display: flex;
+  gap: 10px;
+}
+
+.usuarios-search input {
+  flex: 1;
+}

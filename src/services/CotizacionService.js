@@ -21,3 +21,7 @@ export const actualizarEstadoCotizacion = async (id, dto) => {
 export const obtenerCotizacionPorId = async (id) => {
   return await apiFetch(`/priv/cotizaciones/${id}`);
 };
+
+export const obtenerCotizacionPorNumero = async (numero) => {
+  return await apiFetch(`/priv/cotizaciones/numero/${numero}`);
+};

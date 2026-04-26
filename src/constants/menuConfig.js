@@ -9,12 +9,19 @@ export const MENU_CONFIG = {
       children: [
         { label: "Notificaciones", path: "/cotizaciones/notificaciones" },
         { label: "Generar Cotización manual", path: "/cotizaciones/realizar" },
-        { label: "Generar Cotizacion por ID", path: "/cotizaciones/buscar" },
+        { label: "Generar Cotización por Número de Cotización", path: "/cotizaciones/buscar" },
       ],
     },
 
     { label: "Reclamaciones", path: "/reclamos" },
-    { label: "Usuarios", path: "/usuarios" },
+
+    {
+      label: "Gestión de Usuarios",
+      children: [
+        { label: "Usuarios", path: "/usuarios" },
+        { label: "Empleados", path: "/empleados" },
+      ]
+    }
   ],
 
   [ROLES.VENDEDOR]: [
@@ -25,7 +32,7 @@ export const MENU_CONFIG = {
       children: [
         { label: "Notificaciones", path: "/cotizaciones/notificaciones" },
         { label: "Generar Cotización manual", path: "/cotizaciones/realizar" },
-        { label: "Generar Cotización por ID", path: "/cotizaciones/buscar" },
+        { label: "Generar Cotización por Numero de Cotización", path: "/cotizaciones/buscar" },
       ],
     },
   ],

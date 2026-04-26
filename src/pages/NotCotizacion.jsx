@@ -168,9 +168,16 @@ const NotCotizacion = () => {
                 {/* RESUMEN */}
                 <div className="quote-summary-bar" onClick={() => toggleExpand(p.id)}>
                   <div className="quote-main-info">
-                    <span className="quote-proj-name">
-                      {p.nombreProyecto || "SIN TÍTULO"}
-                    </span>
+
+                    <div className="quote-header-main">
+                      <span className="quote-code">
+                        {p.numeroCotizacion || "COT-SIN-CODIGO"}
+                      </span>
+
+                      <span className="quote-proj-name">
+                        {p.nombreProyecto || "SIN TÍTULO"}
+                      </span>
+                    </div>
 
                     <span className="quote-reg-date">
                       📅 {p.fechaRegistro

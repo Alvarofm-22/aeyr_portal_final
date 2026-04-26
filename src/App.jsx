@@ -11,6 +11,8 @@ import "./App.css";
 import CotizacionViewer from "./pages/CotizacionViewer";
 import BuscarCotizacion from "./pages/BuscarCotizacion"; // 👈 NUEVO
 import { ROLES } from "./constants/roles";
+import EmpleadoHome from "./pages/EmpleadoHome";
+import UsuarioHome from "./pages/UsuarioHome";
 
 const AppRoutes = () => {
   const { isAuthenticated, logout } = useAuth();
@@ -70,7 +72,7 @@ const AppRoutes = () => {
 
           {/* 📄 VIEWER PDF */}
           <Route
-            path="/cotizaciones/:id"
+            path="/cotizaciones/numero/:numero"
             element={
               <PrivateRoute roles={[ROLES.ADMIN, ROLES.VENDEDOR]}>
                 <CotizacionViewer />
@@ -84,6 +86,26 @@ const AppRoutes = () => {
             element={
               <PrivateRoute roles={[ROLES.ADMIN]}>
                 <LibroReclamaciones />
+              </PrivateRoute>
+            }
+          />
+
+          {/* EMLEADOS */}
+          <Route
+            path="/empleados"
+            element={
+              <PrivateRoute roles={[ROLES.ADMIN]}>  
+                <EmpleadoHome />
+              </PrivateRoute>
+            }
+          />
+
+          {/* USUARIOS */}
+          <Route
+            path="/usuarios"
+            element={
+              <PrivateRoute roles={[ROLES.ADMIN]}>  
+                <UsuarioHome />
               </PrivateRoute>
             }
           />

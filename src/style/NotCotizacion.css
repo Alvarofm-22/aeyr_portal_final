@@ -372,3 +372,16 @@
   background: #cffafe;
   color: #0e7490;
 }
+
+
+.quote-code {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #6b7280;
+  display: block;
+}
+
+.quote-header-main {
+  display: flex;
+  flex-direction: column;
+}

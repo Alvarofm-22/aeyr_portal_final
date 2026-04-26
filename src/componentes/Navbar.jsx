@@ -12,7 +12,9 @@ const Navbar = () => {
   const location = useLocation();
   const { user, logout } = useAuth();
 
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
   const [openMenu, setOpenMenu] = useState(null);
+
   const [badges, setBadges] = useState({
     cotizaciones: 0,
     reclamos: 0,
@@ -55,94 +57,126 @@ const Navbar = () => {
   }, [user]);
 
   const handleLogout = () => {
-    if (window.confirm("¿Deseas cerrar sesión?")) {
-      logout();
-      navigate("/login");
-    }
+    logout();
+    navigate("/login");
   };
 
   if (!user) return null;
 
   return (
-    <aside className="sidebar">
-      <div className="sidebar-logo">
-        <h2>AEYR PANEL</h2>
-      </div>
+    <>
+      <aside className="sidebar">
+        <div className="sidebar-logo">
+          <h2>AEYR PANEL</h2>
+        </div>
 
-      <nav className="sidebar-menu">
-        {menuItems.map((item, index) => {
-          if (!item.children) {
-            return (
-              <Link
-                key={index}
-                to={item.path}
-                className={`menu-item ${
-                  location.pathname === item.path ? "active" : ""
-                }`}
-              >
-                {item.label}
-
-                {item.path === "/reclamos" && badges.reclamos > 0 && (
-                  <span className="badge-count">{badges.reclamos}</span>
-                )}
-              </Link>
-            );
-          }
-
-          return (
-            <div key={index} className="menu-dropdown">
-              <div
-                className="menu-item dropdown-trigger"
-                onClick={() =>
-                  setOpenMenu(openMenu === index ? null : index)
-                }
-              >
-                <span>{item.label}</span>
-
-                {item.label === "Cotizaciones" &&
-                  badges.cotizaciones > 0 && (
-                    <span className="badge-count">
-                      {badges.cotizaciones}
-                    </span>
-                  )}
-
-                <span
-                  className={`arrow ${
-                    openMenu === index ? "rotate" : ""
+        <nav className="sidebar-menu">
+          {menuItems.map((item, index) => {
+            if (!item.children) {
+              return (
+                <Link
+                  key={index}
+                  to={item.path}
+                  className={`menu-item ${
+                    location.pathname === item.path ? "active" : ""
                   }`}
                 >
-                  ▼
-                </span>
-              </div>
+                  {item.label}
 
-              <div
-                className={`submenu-wrapper ${
-                  openMenu === index ? "open" : ""
-                }`}
-              >
-                <div className="submenu">
-                  {item.children.map((sub, i) => (
-                    <Link
-                      key={i}
-                      to={sub.path}
-                      className="submenu-item"
-                    >
-                      {sub.label}
-                    </Link>
-                  ))}
+                  {item.path === "/reclamos" && badges.reclamos > 0 && (
+                    <span className="badge-count">{badges.reclamos}</span>
+                  )}
+                </Link>
+              );
+            }
+
+            return (
+              <div key={index} className="menu-dropdown">
+                <div
+                  className="menu-item dropdown-trigger"
+                  onClick={() =>
+                    setOpenMenu(openMenu === index ? null : index)
+                  }
+                >
+                  <span>{item.label}</span>
+
+                  {item.label === "Cotizaciones" &&
+                    badges.cotizaciones > 0 && (
+                      <span className="badge-count">
+                        {badges.cotizaciones}
+                      </span>
+                    )}
+
+                  <span
+                    className={`arrow ${
+                      openMenu === index ? "rotate" : ""
+                    }`}
+                  >
+                    ▼
+                  </span>
+                </div>
+
+                <div
+                  className={`submenu-wrapper ${
+                    openMenu === index ? "open" : ""
+                  }`}
+                >
+                  <div className="submenu">
+                    {item.children.map((sub, i) => (
+                      <Link
+                        key={i}
+                        to={sub.path}
+                        className="submenu-item"
+                      >
+                        {sub.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
-      </nav>
+            );
+          })}
+        </nav>
 
-      <div className="sidebar-footer">
-        <button onClick={handleLogout} className="btn-logout">
-          Cerrar sesión
-        </button>
-      </div>
-    </aside>
+        <div className="sidebar-footer">
+          <button
+            onClick={() => setShowLogoutModal(true)}
+            className="btn-logout"
+          >
+            Cerrar sesión
+          </button>
+        </div>
+      </aside>
+
+      {/* 🔒 MODAL LOGOUT */}
+      {showLogoutModal && (
+        <div className="modal">
+          <div className="modal-content logout-modal">
+            <h3>¿Cerrar sesión?</h3>
+
+            <p className="logout-text">
+              Tu sesión actual se cerrará. ¿Deseas continuar?
+            </p>
+
+            <div className="modal-actions">
+              <button
+                className="btn btn-danger"
+                onClick={handleLogout}
+              >
+                Sí, salir
+              </button>
+
+              <button
+                className="btn btn-secondary"
+                onClick={() => setShowLogoutModal(false)}
+              >
+                Cancelar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
