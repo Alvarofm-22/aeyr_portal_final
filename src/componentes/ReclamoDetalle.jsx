@@ -24,16 +24,27 @@ const ReclamoDetalle = ({ reclamo, onClose }) => {
   );
 
   // 🔥 Monto formateado
-  const formattedMonto = useMemo(() => {
-    if (!reclamo.montoReclamado) return "-";
+const formattedMonto = useMemo(() => {
+  if (!reclamo.montoReclamado) return "-";
 
-    return reclamo.tipoMoneda === "SOLES"
-      ? `S/ ${Number(reclamo.montoReclamado).toFixed(2)}`
-      : `$ ${Number(reclamo.montoReclamado).toFixed(2)}`;
-  }, [reclamo.montoReclamado, reclamo.tipoMoneda]);
+  const moneda = reclamo.tipoMoneda;
 
-  const monedaLabel =
-    reclamo.tipoMoneda === "SOLES" ? "Soles" : "Dólares";
+  const simbolo =
+    moneda === "PEN" || moneda === "SOLES"
+      ? "S/"
+      : moneda === "USD" || moneda === "DOLARES"
+      ? "$"
+      : "";
+
+  return `${simbolo} ${Number(reclamo.montoReclamado).toFixed(2)}`;
+}, [reclamo.montoReclamado, reclamo.tipoMoneda]);
+
+const monedaLabel =
+  reclamo.tipoMoneda === "PEN" || reclamo.tipoMoneda === "SOLES"
+    ? "Soles"
+    : reclamo.tipoMoneda === "USD" || reclamo.tipoMoneda === "DOLARES"
+    ? "Dólares"
+    : reclamo.tipoMoneda;
 
   return (
     <div className="modal-overlay" onClick={onClose}>

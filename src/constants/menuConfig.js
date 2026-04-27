@@ -28,6 +28,7 @@ export const MENU_CONFIG = {
       label: "Mantenimiento de Productos",
       children: [
         { label: "Productos", path: "/productos" },
+        { label: "Tarifa por Producto segun Distrito", path: "/tarifaProducto" },
       ]
     }
 

@@ -45,13 +45,22 @@ const mapReclamo = (r) => ({
   tipoLabel: formatEnum(r.tipo),
   estadoLabel: formatEnum(r.estado),
 
-  monedaLabel:
-    r.tipoMoneda === "SOLES" ? "Soles" : "Dólares",
+  monedaLabel: getMonedaLabel(r.tipoMoneda),
 
   fechaFormateada: r.fechaRegistro
     ? new Date(r.fechaRegistro).toLocaleDateString("es-PE")
     : "-",
 });
+
+// 🔥 COMPATIBLE CON TODO
+const getMonedaLabel = (moneda) => {
+  if (!moneda) return "-";
+
+  if (moneda === "PEN" || moneda === "SOLES") return "Soles";
+  if (moneda === "USD" || moneda === "DOLARES") return "Dólares";
+
+  return moneda;
+};
 
 // ==========================
 // HELPER

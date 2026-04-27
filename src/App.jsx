@@ -14,6 +14,7 @@ import { ROLES } from "./constants/roles";
 import EmpleadoHome from "./pages/EmpleadoHome";
 import UsuarioHome from "./pages/UsuarioHome";
 import ProductosHome from "./pages/ProductosHome";
+import TarifaProductoHome from "./pages/TarifaProductoHome";
 
 const AppRoutes = () => {
   const { isAuthenticated, logout } = useAuth();
@@ -117,6 +118,16 @@ const AppRoutes = () => {
             element={
               <PrivateRoute roles={[ROLES.ADMIN]}>  
                 <ProductosHome />
+              </PrivateRoute>
+            }
+          />
+
+          {/* TARIFA POR PRODUCTO SEGUN DISTRITO */}
+          <Route
+            path="/tarifaProducto"
+            element={
+              <PrivateRoute roles={[ROLES.ADMIN]}>  
+                <TarifaProductoHome />
               </PrivateRoute>
             }
           />
