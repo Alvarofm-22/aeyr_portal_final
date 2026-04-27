@@ -1,3 +1,4 @@
+import { label } from "framer-motion/client";
 import { ROLES } from "./roles";
 
 export const MENU_CONFIG = {
@@ -21,7 +22,15 @@ export const MENU_CONFIG = {
         { label: "Usuarios", path: "/usuarios" },
         { label: "Empleados", path: "/empleados" },
       ]
+    },
+
+    {
+      label: "Mantenimiento de Productos",
+      children: [
+        { label: "Productos", path: "/productos" },
+      ]
     }
+
   ],
 
   [ROLES.VENDEDOR]: [

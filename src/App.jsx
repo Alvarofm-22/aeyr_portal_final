@@ -13,6 +13,7 @@ import BuscarCotizacion from "./pages/BuscarCotizacion"; // 👈 NUEVO
 import { ROLES } from "./constants/roles";
 import EmpleadoHome from "./pages/EmpleadoHome";
 import UsuarioHome from "./pages/UsuarioHome";
+import ProductosHome from "./pages/ProductosHome";
 
 const AppRoutes = () => {
   const { isAuthenticated, logout } = useAuth();
@@ -106,6 +107,16 @@ const AppRoutes = () => {
             element={
               <PrivateRoute roles={[ROLES.ADMIN]}>  
                 <UsuarioHome />
+              </PrivateRoute>
+            }
+          />
+
+          {/* Productos */}
+          <Route
+            path="/productos"
+            element={
+              <PrivateRoute roles={[ROLES.ADMIN]}>  
+                <ProductosHome />
               </PrivateRoute>
             }
           />
